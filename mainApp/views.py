@@ -1,5 +1,5 @@
 from rest_framework import generics
-from .serializers import *
+from .serializers import ToDoSerializer 
 from .models import ToDo
 from rest_framework.exceptions import ValidationError
 
@@ -24,10 +24,9 @@ class DetailTodo(generics.RetrieveAPIView):
 
     def get_object(self):
         # Custom logic before retrieving
-        obj = super().get_object()
+        return super().get_object()
         # Example: check permissions or log access
         # log_access(obj)
-        return obj
 
 class CreateTodo(generics.CreateAPIView):
     queryset = ToDo.objects.all()
