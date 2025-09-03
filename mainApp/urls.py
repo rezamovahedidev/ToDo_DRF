@@ -1,11 +1,11 @@
 from django.urls import path
-from .views import DetailTodo, ListTodo, CreateTodo, DeleteTodo
-
+from .views import ListTodo, DetailTodo, CreateTodo, DeleteTodo
 
 urlpatterns = [
-	path('<int:pk>/', DetailTodo.as_view()),
-	path('api/', ListTodo.as_view()),
-	path('create/', CreateTodo.as_view()),
-	path('delete/<int:pk>/', DeleteTodo.as_view()),
+    path('todos/', ListTodo.as_view(), name='todo-list'),
+    path('todos/<int:pk>/', DetailTodo.as_view(), name='todo-detail'),
+    path('todos/create/', CreateTodo.as_view(), name='todo-create'),
+    path('todos/<int:pk>/delete/', DeleteTodo.as_view(), name='todo-delete'),
+]
 ]
 
