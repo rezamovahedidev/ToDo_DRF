@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import ListTodo, DetailTodo, CreateTodo, DeleteTodo
+from .views import *
+from rest_framework import routers
 
 urlpatterns = [
     path('todos/', ListTodo.as_view(), name='todo-list'),
