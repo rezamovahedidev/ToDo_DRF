@@ -4,7 +4,7 @@ from models import *
 class ToDoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ToDo
-        fields = ['id', 'title', 'description', 'date', 'completed']
+        fields = '__all__'
 
     # def validate_title(self, value):
     #     if ToDo.objects.filter(title=value).exists():
